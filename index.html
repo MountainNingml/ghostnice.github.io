@@ -6,14 +6,14 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Hexo</title>
+  <title>博雅-一介书生，两袖清风。</title>
   <meta name="author" content="John Doe">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="Hexo"/>
+  <meta property="og:site_name" content="博雅-一介书生，两袖清风。"/>
 
   
     <meta property="og:image" content=""/>
@@ -69,7 +69,7 @@ var _hmt = _hmt || [];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <a class="navbar-brand" href="/">Hexo</a>
+	  <a class="navbar-brand" href="/">博雅-一介书生，两袖清风。</a>
       <div class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav">
 		  
@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
   <div class="container">
   	<div class="content">
     	 <div class="page-header logo">
-  <h1>Hexo<span class="blink-fast">∎</span></h1>
+  <h1>博雅-一介书生，两袖清风。<span class="blink-fast">∎</span></h1>
 </div>
 
 <div class="row page">
@@ -151,13 +151,7 @@ var _hmt = _hmt || [];
 	
 	
 		<h2 id="网鼎杯第四场部分题目WriteUp汇总"><a href="#网鼎杯第四场部分题目WriteUp汇总" class="headerlink" title="网鼎杯第四场部分题目WriteUp汇总"></a>网鼎杯第四场部分题目WriteUp汇总</h2><h3 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h3><ol>
-<li>签到<br><img src="http://thyrsi.com/t6/365/1535619779x-1376440090.jpg" alt="image"><br>（1）提示让关注公众号，关注后在公众号里边输入“玄蛇龟武”之<br>后如下图所示</li>
-</ol>
-<p><img src="http://thyrsi.com/t6/365/1535619859x1822611359.jpg" alt="image"><br>    Flag：* flag{expect_wangdingbei}</p>
-<ol start="2">
-<li><p>双色块<br><img src="http://thyrsi.com/t6/365/1535619969x1822611383.jpg" alt="image"><br>解答：<br>（1）    下载题目后发现是一张gif图片，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620021x1822611263.jpg" alt="image"></p>
-<p> （2）使用binwalk测试有没有复合型图片，如下图所示<br> <img src="http://thyrsi.com/t6/365/1535620096x1822611359.jpg" alt="image"><br> （3）    发现有复合型图片，使用dd命令进行分离，如下下图所示；<br>命令：dd if=out.gif of=1.png bs=1 skip=735555 </p>
-<p> （4）使用gifsplitter2.0差分gif图片，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620172x-1404817844.jpg" alt="image"><br> （5）把图片上的绿色标注为0，紫色标注为1.进行转换，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620273x-1566688371.jpg" alt="image"><br> （6）把转换得到的二进制结果进行ascii转换，如下图所示；<br>转换链接：<a href="http://www.5ixuexiwang.com/str/from-binary.php" target="_blank" rel="noopener">http://www.5ixuexiwang.com/str/from-binary.php</a><br><img src="http://thyrsi.com/t6/365/1535620322x-1566688371.jpg" alt="image"><br> （7）把转换出来的结果进行DES解密，使用png上的密钥。如下图所示；<br> 解密网址：<a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">https://gchq.github.io/CyberChef/</a><br> <img src="http://thyrsi.com/t6/365/1535620371x-1566688371.jpg" alt="image"><br> 备注：png图片上的是DES解密密钥<br> （8）Flag：flag{2ce3b416457d4380dc9a6149858f71db</p>
+<li>签到<br><img src="http://thyrsi.com/t6/365/1535619779x-1376440090.jpg" alt="image"><br>（1）提示让关注公众号，关注后在公众号里边输入“玄蛇龟武”之<br>后如下图所示
 	
 	</div>
   <a type="button" href="/2018/08/30/网鼎杯第四场题目WriteUp/#more" class="btn btn-default more">Read More</a>
@@ -185,24 +179,7 @@ var _hmt = _hmt || [];
 	
 	
 		<h1 id="相关的Misc题解总结如下"><a href="#相关的Misc题解总结如下" class="headerlink" title="相关的Misc题解总结如下;"></a>相关的Misc题解总结如下;</h1><p><strong>笔记作者：博雅</strong><br><img src="http://ae01.alicdn.com/kf/HTB17QB0BZyYBuNkSnfo763WgVXaC.png" alt="image"></p>
-<h2 id="0x01-Misc-套娃"><a href="#0x01-Misc-套娃" class="headerlink" title="0x01 Misc-套娃"></a>0x01 Misc-套娃</h2><p><img src="http://ae01.alicdn.com/kf/HTB1AbDTKb1YBuNjSszh763UsFXaU.png" alt="image"></p>
-<p>打开之后，直接丢入binwalk中进行查询。初步发现第六张图片存在问题。</p>
-<h3 id="关于LSB隐写"><a href="#关于LSB隐写" class="headerlink" title="关于LSB隐写"></a>关于LSB隐写</h3><p><strong>LSB全称least significant bit，最低有效位<br>PNG文件中的图像像数一般是由RGB三原色（红绿蓝）组成，每一种颜色占用8位，取值范围为0x00~0xFF，即有256种颜色，一共包含了256的3次方的颜色，即16777216 种颜色<br>人类的眼睛可以区分约1000万种不同的颜色<br>这意味着人类的眼睛无法区分余下的颜色大约有6777216种<br>LSB隐写就是修改RGB颜色分量的最低二进制位（LSB），而人类的眼睛不会注意到这前后的变化<br>每个像数可以携带3比特的信息</strong><br><img src="http://ae01.alicdn.com/kf/HTB1hSnhB8yWBuNkSmFP760guVXaP.png" alt="image"></p>
-<p><strong>使用相关的LSB脚本进行解题。</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1.RvxKh9YBuNjy0Ff760IsVXaK.png" alt="image"><br><strong>解得Flag。相关FLag保存在flag.txt文档中，直接打开查看即可。</strong></p>
-<h2 id="0x02-Misc-minified"><a href="#0x02-Misc-minified" class="headerlink" title="0x02 Misc-minified"></a>0x02 Misc-minified</h2><p><strong>使用用Stegsolve 打开图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1XDPOKkCWBuNjy0Fa760UlXXaG.png" alt="image"></p>
-<p><strong>打开 Stegsolve 选择Data Extract 查看图片通道，如图，</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1FFLTKkOWBuNjSspp760PgpXaV.png" alt="image"></p>
-<p><strong>选择0 通道发现是LSB 隐写。其实与上面套娃的判断方式相同，由此判断是LSB隐写</strong><br><img src="http://ae01.alicdn.com/kf/HTB1VGBbdjfguuRjy1ze7620KFXaZ.png" alt="image"></p>
-<p><strong>分别把 alpha green和blue的0通道另存为再进行异或处理 最终在alpha 和green 中发现flag</strong><br><img src="http://ae01.alicdn.com/kf/HTB1UXqpB5OYBuNjSsD4762SkFXaD.png" alt="image"></p>
-<h2 id="0x03-Misc-Clip"><a href="#0x03-Misc-Clip" class="headerlink" title="0x03 Misc-Clip"></a>0x03 Misc-Clip</h2><p><strong>下载题目是Disk 文件。第一反应是linux虚拟硬盘。<br>用winhex 打开如图：</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB11YBbdi6guuRjy1Xd761AwpXaY.png" alt="image"></p>
-<p><strong>在winhex中第196280 发现了png的头文件如图：</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1eLXzKXmWBuNjSspd762ugXXac.png" alt="image"><br>png 16进制文件头以 89504E47开头<br><strong>第一张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1YqwzKhGYBuNjy0Fn7605lpXac.png" alt="image"><br><strong>第二张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1eYVadi6guuRkSnb4762u4XXae.png" alt="image"><br><strong>使用PS拼接如下如：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1rmLxKh9YBuNjy0Ff760IsVXap.png" alt="image"></p>
-<blockquote>
-<p>来自Gules-WarningCTF战队</p>
-</blockquote>
-
+<h2 id="0x01-Misc-套娃"><a href="#0x01-Misc-套娃" class="headerlink" title="0x01 Misc-套娃"></a>0x01 Misc-套娃</h2><p><img src="http://ae01.alicdn.com/kf/HTB1AbDTKb1YBuNjSszh763UsFXaU.png" alt="image"><br>
 	
 	</div>
   <a type="button" href="/2018/08/30/网鼎杯前两场部分Misc汇总/#more" class="btn btn-default more">Read More</a>
@@ -229,16 +206,7 @@ var _hmt = _hmt || [];
   <div class="row">
 	
 	
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
 	
 	</div>
   <a type="button" href="/2018/08/30/hello-world/#more" class="btn btn-default more">Read More</a>
