@@ -15,7 +15,8 @@
     Flag：* flag{expect_wangdingbei}
 
 双色块解答：（1）    下载题目后发现是一张gif图片，如下图所示；
- （2）使用binwalk">
+ （2）使用binwalk测试有没有复合型图片，如下图所示  （3）    发现有复合型图片，使用dd命令进行分离，如下下图所示；命令：dd if=out.gif of=1.png bs=1 skip=735555 
+ （4）使用gifsplitter2.0差分gif图片，如下图所示；  （5）把图片上的绿色标注为0，紫色标注为1.进行转换，如下图所示；  （6）把转换得到的二进制结果进行ascii转换，如下图所示；转换链接：http://www.5ixuexiwang.com/str/from-binary.php （7）把转换出来的结果进行DES解密，使用png上的密钥。如下图所示； 解密网址：https://gchq.github.io/CyberChef/  备注：png图片上的是DES解密密钥 （8）Flag：flag{2ce3b416457d4380dc9a6149858f71db">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -149,9 +150,8 @@ var _hmt = _hmt || [];
 <li><p>双色块<br><img src="http://thyrsi.com/t6/365/1535619969x1822611383.jpg" alt="image"><br>解答：<br>（1）    下载题目后发现是一张gif图片，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620021x1822611263.jpg" alt="image"></p>
 <p> （2）使用binwalk测试有没有复合型图片，如下图所示<br> <img src="http://thyrsi.com/t6/365/1535620096x1822611359.jpg" alt="image"><br> （3）    发现有复合型图片，使用dd命令进行分离，如下下图所示；<br>命令：dd if=out.gif of=1.png bs=1 skip=735555 </p>
 <p> （4）使用gifsplitter2.0差分gif图片，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620172x-1404817844.jpg" alt="image"><br> （5）把图片上的绿色标注为0，紫色标注为1.进行转换，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620273x-1566688371.jpg" alt="image"><br> （6）把转换得到的二进制结果进行ascii转换，如下图所示；<br>转换链接：<a href="http://www.5ixuexiwang.com/str/from-binary.php" target="_blank" rel="noopener">http://www.5ixuexiwang.com/str/from-binary.php</a><br><img src="http://thyrsi.com/t6/365/1535620322x-1566688371.jpg" alt="image"><br> （7）把转换出来的结果进行DES解密，使用png上的密钥。如下图所示；<br> 解密网址：<a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">https://gchq.github.io/CyberChef/</a><br> <img src="http://thyrsi.com/t6/365/1535620371x-1566688371.jpg" alt="image"><br> 备注：png图片上的是DES解密密钥<br> （8）Flag：flag{2ce3b416457d4380dc9a6149858f71db</p>
-</li>
-</ol>
-<h3 id="二、-Crypto"><a href="#二、-Crypto" class="headerlink" title="二、 Crypto"></a>二、 Crypto</h3><ol>
+<a id="more"></a>
+<h3 id="二、-Crypto"><a href="#二、-Crypto" class="headerlink" title="二、 Crypto"></a>二、 Crypto</h3></li>
 <li>Shanghai<br> <img src="http://thyrsi.com/t6/365/1535620531x-1376440090.jpg" alt="image"><br> 答：<br>（1）    下载题目发现是txt文档，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620589x-1404817844.jpg" alt="image"><br>（2）    观察密文发现是维尼亚密码，然后进行解密，如下图所示；<br>解密网址：<a href="http://ctf.ssleye.com/vigenere.html?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">http://ctf.ssleye.com/vigenere.html?tdsourcetag=s_pctim_aiomsg</a><br><img src="http://thyrsi.com/t6/365/1535620623x-1404817844.jpg" alt="image"></li>
 </ol>
 <p>备注：维吉尼亚密码密码解密需要密钥，猜解密钥为：icqvigenere。因为icq是i春秋的首字母，vigenere是维吉尼英文解释，所以密钥就为icqvigenere </p>

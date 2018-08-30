@@ -158,20 +158,6 @@ var _hmt = _hmt || [];
 <li><p>双色块<br><img src="http://thyrsi.com/t6/365/1535619969x1822611383.jpg" alt="image"><br>解答：<br>（1）    下载题目后发现是一张gif图片，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620021x1822611263.jpg" alt="image"></p>
 <p> （2）使用binwalk测试有没有复合型图片，如下图所示<br> <img src="http://thyrsi.com/t6/365/1535620096x1822611359.jpg" alt="image"><br> （3）    发现有复合型图片，使用dd命令进行分离，如下下图所示；<br>命令：dd if=out.gif of=1.png bs=1 skip=735555 </p>
 <p> （4）使用gifsplitter2.0差分gif图片，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620172x-1404817844.jpg" alt="image"><br> （5）把图片上的绿色标注为0，紫色标注为1.进行转换，如下图所示；<br> <img src="http://thyrsi.com/t6/365/1535620273x-1566688371.jpg" alt="image"><br> （6）把转换得到的二进制结果进行ascii转换，如下图所示；<br>转换链接：<a href="http://www.5ixuexiwang.com/str/from-binary.php" target="_blank" rel="noopener">http://www.5ixuexiwang.com/str/from-binary.php</a><br><img src="http://thyrsi.com/t6/365/1535620322x-1566688371.jpg" alt="image"><br> （7）把转换出来的结果进行DES解密，使用png上的密钥。如下图所示；<br> 解密网址：<a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">https://gchq.github.io/CyberChef/</a><br> <img src="http://thyrsi.com/t6/365/1535620371x-1566688371.jpg" alt="image"><br> 备注：png图片上的是DES解密密钥<br> （8）Flag：flag{2ce3b416457d4380dc9a6149858f71db</p>
-</li>
-</ol>
-<h3 id="二、-Crypto"><a href="#二、-Crypto" class="headerlink" title="二、 Crypto"></a>二、 Crypto</h3><ol>
-<li>Shanghai<br> <img src="http://thyrsi.com/t6/365/1535620531x-1376440090.jpg" alt="image"><br> 答：<br>（1）    下载题目发现是txt文档，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620589x-1404817844.jpg" alt="image"><br>（2）    观察密文发现是维尼亚密码，然后进行解密，如下图所示；<br>解密网址：<a href="http://ctf.ssleye.com/vigenere.html?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">http://ctf.ssleye.com/vigenere.html?tdsourcetag=s_pctim_aiomsg</a><br><img src="http://thyrsi.com/t6/365/1535620623x-1404817844.jpg" alt="image"></li>
-</ol>
-<p>备注：维吉尼亚密码密码解密需要密钥，猜解密钥为：icqvigenere。因为icq是i春秋的首字母，vigenere是维吉尼英文解释，所以密钥就为icqvigenere </p>
-<p>（3）    在解密出来的内容中搜索flag，如下图所示；</p>
-<p><img src="http://thyrsi.com/t6/365/1535620701x-1376440090.jpg" alt="image"><br>（4）    把flag后的俩个and替换成{}</p>
-<p>（5）    Flag: flag{vigenereisveryeasyhuh} </p>
-<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><ol>
-<li>Blog<br><img src="http://thyrsi.com/t6/365/1535620802x-1566688371.jpg" alt="image"><br>（1）    打开链接发现是wordpress系统的网站，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620836x-1566688371.jpg" alt="image"><br>（2）    拿扫描器扫描网站接口然后进行爆破；</li>
-</ol>
-<p>（3）    根据爆破出来的API接口编写payload，如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620882x-1566688371.jpg" alt="image"><br>（4）    得到的flag如下图所示；<br><img src="http://thyrsi.com/t6/365/1535620918x-1566688371.jpg" alt="image"><br>（5）    Flag：flag{62d30651-ab4a-4b4c-ba79-cb9a70e99b32} </p>
-<h3 id="未经授权，切勿转载！！！"><a href="#未经授权，切勿转载！！！" class="headerlink" title="未经授权，切勿转载！！！"></a><strong>未经授权，切勿转载！！！</strong></h3>
 	
 	</div>
   <a type="button" href="/2018/08/30/网鼎杯第四场题目WriteUp/#more" class="btn btn-default more">Read More</a>
