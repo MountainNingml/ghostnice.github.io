@@ -1,23 +1,234 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>网鼎杯前两场部分Misc题WriteUp | 博雅-一介书生，两袖清风。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="相关的Misc题解总结如下;笔记作者：博雅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网鼎杯前两场部分Misc题WriteUp">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/网鼎杯前两场部分Misc汇总/index.html">
+<meta property="og:site_name" content="博雅-一介书生，两袖清风。">
+<meta property="og:description" content="相关的Misc题解总结如下;笔记作者：博雅">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB17QB0BZyYBuNkSnfo763WgVXaC.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1AbDTKb1YBuNjSszh763UsFXaU.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1hSnhB8yWBuNkSmFP760guVXaP.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1.RvxKh9YBuNjy0Ff760IsVXaK.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1XDPOKkCWBuNjy0Fa760UlXXaG.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1FFLTKkOWBuNjSspp760PgpXaV.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1VGBbdjfguuRjy1ze7620KFXaZ.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1UXqpB5OYBuNjSsD4762SkFXaD.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB11YBbdi6guuRjy1Xd761AwpXaY.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1eLXzKXmWBuNjSspd762ugXXac.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1YqwzKhGYBuNjy0Fn7605lpXac.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1eYVadi6guuRkSnb4762u4XXae.png">
+<meta property="og:image" content="http://ae01.alicdn.com/kf/HTB1rmLxKh9YBuNjy0Ff760IsVXap.png">
+<meta property="og:updated_time" content="2018-08-30T09:44:34.611Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网鼎杯前两场部分Misc题WriteUp">
+<meta name="twitter:description" content="相关的Misc题解总结如下;笔记作者：博雅">
+<meta name="twitter:image" content="http://ae01.alicdn.com/kf/HTB17QB0BZyYBuNkSnfo763WgVXaC.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">博雅-一介书生，两袖清风。</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">博雅-一介书生，两袖清风。</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-网鼎杯前两场部分Misc汇总" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/30/网鼎杯前两场部分Misc汇总/" class="article-date">
+  <time datetime="2018-08-30T08:49:35.069Z" itemprop="datePublished">2018-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网鼎杯前两场部分Misc题WriteUp
+    </h1>
+  
 
-block content
-  article#post.article-entry
-    != page.content
-  // lincense
-  if(theme.copyright.enable === true && page.copyright !== false)
-    .license-wrapper
-      p 
-        span Author:  
-        a(href=config.url)= config.author
-      p 
-        span Link:  
-        a(href=page.permalink)= page.permalink
-      p 
-        span Copyright:  
-        span!= theme.copyright.license
-  include includes/partial/post-nav.pug
-  #comment
-    include includes/comment/livere.pug
-    include includes/comment/disqus.pug
-    include includes/comment/changyan.pug
-    include includes/comment/gitment.pug
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="相关的Misc题解总结如下"><a href="#相关的Misc题解总结如下" class="headerlink" title="相关的Misc题解总结如下;"></a>相关的Misc题解总结如下;</h1><p><strong>笔记作者：博雅</strong><br><img src="http://ae01.alicdn.com/kf/HTB17QB0BZyYBuNkSnfo763WgVXaC.png" alt="image"><br><a id="more"></a></p>
+<h2 id="0x01-Misc-套娃"><a href="#0x01-Misc-套娃" class="headerlink" title="0x01 Misc-套娃"></a>0x01 Misc-套娃</h2><p><img src="http://ae01.alicdn.com/kf/HTB1AbDTKb1YBuNjSszh763UsFXaU.png" alt="image"></p>
+<p>打开之后，直接丢入binwalk中进行查询。初步发现第六张图片存在问题。</p>
+<h3 id="关于LSB隐写"><a href="#关于LSB隐写" class="headerlink" title="关于LSB隐写"></a>关于LSB隐写</h3><p><strong>LSB全称least significant bit，最低有效位<br>PNG文件中的图像像数一般是由RGB三原色（红绿蓝）组成，每一种颜色占用8位，取值范围为0x00~0xFF，即有256种颜色，一共包含了256的3次方的颜色，即16777216 种颜色<br>人类的眼睛可以区分约1000万种不同的颜色<br>这意味着人类的眼睛无法区分余下的颜色大约有6777216种<br>LSB隐写就是修改RGB颜色分量的最低二进制位（LSB），而人类的眼睛不会注意到这前后的变化<br>每个像数可以携带3比特的信息</strong><br><img src="http://ae01.alicdn.com/kf/HTB1hSnhB8yWBuNkSmFP760guVXaP.png" alt="image"></p>
+<p><strong>使用相关的LSB脚本进行解题。</strong></p>
+<p><img src="http://ae01.alicdn.com/kf/HTB1.RvxKh9YBuNjy0Ff760IsVXaK.png" alt="image"><br><strong>解得Flag。相关FLag保存在flag.txt文档中，直接打开查看即可。</strong></p>
+<h2 id="0x02-Misc-minified"><a href="#0x02-Misc-minified" class="headerlink" title="0x02 Misc-minified"></a>0x02 Misc-minified</h2><p><strong>使用用Stegsolve 打开图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1XDPOKkCWBuNjy0Fa760UlXXaG.png" alt="image"></p>
+<p><strong>打开 Stegsolve 选择Data Extract 查看图片通道，如图，</strong></p>
+<p><img src="http://ae01.alicdn.com/kf/HTB1FFLTKkOWBuNjSspp760PgpXaV.png" alt="image"></p>
+<p><strong>选择0 通道发现是LSB 隐写。其实与上面套娃的判断方式相同，由此判断是LSB隐写</strong><br><img src="http://ae01.alicdn.com/kf/HTB1VGBbdjfguuRjy1ze7620KFXaZ.png" alt="image"></p>
+<p><strong>分别把 alpha green和blue的0通道另存为再进行异或处理 最终在alpha 和green 中发现flag</strong><br><img src="http://ae01.alicdn.com/kf/HTB1UXqpB5OYBuNjSsD4762SkFXaD.png" alt="image"></p>
+<h2 id="0x03-Misc-Clip"><a href="#0x03-Misc-Clip" class="headerlink" title="0x03 Misc-Clip"></a>0x03 Misc-Clip</h2><p><strong>下载题目是Disk 文件。第一反应是linux虚拟硬盘。<br>用winhex 打开如图：</strong></p>
+<p><img src="http://ae01.alicdn.com/kf/HTB11YBbdi6guuRjy1Xd761AwpXaY.png" alt="image"></p>
+<p><strong>在winhex中第196280 发现了png的头文件如图：</strong></p>
+<p><img src="http://ae01.alicdn.com/kf/HTB1eLXzKXmWBuNjSspd762ugXXac.png" alt="image"><br>png 16进制文件头以 89504E47开头<br><strong>第一张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1YqwzKhGYBuNjy0Fn7605lpXac.png" alt="image"><br><strong>第二张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1eYVadi6guuRkSnb4762u4XXae.png" alt="image"><br><strong>使用PS拼接如下如：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1rmLxKh9YBuNjy0Ff760IsVXap.png" alt="image"></p>
+<blockquote>
+<p>来自Gules-WarningCTF战队</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/08/30/网鼎杯前两场部分Misc汇总/" data-id="cjom8mwpa00003gw94eppdicv" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/30/网鼎杯第四场题目WriteUp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          网鼎杯第四场部分题目WriteUp
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">博客使用规范文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>
