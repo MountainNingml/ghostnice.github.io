@@ -1,140 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>网鼎杯前两场部分Misc题WriteUp | 博雅&#39;s Blog</title>
+extends includes/layout
 
-  
-  <meta name="author" content="John Doe">
-  
+block content
 
-  
-  <meta name="description" content="相关的Misc题解总结如下;笔记作者：博雅">
-  
+    section#wrapper.post
+        article
+            header
+                h1!=page.title
+                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
+                    |·
+                    |#{wordcount(page.content)} words
+                    |·
+                    |#{min2read(page.content)} minutes read
+                    span.tags
 
-  
-  
-  <meta name="keywords" content="">
-  
+            if toc(page.content)
+                div#toc!=toc(page.content,{list_number:false})
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            section#post-body!=page.content
 
-  <meta property="og:title" content="网鼎杯前两场部分Misc题WriteUp"/>
+            - var prev = page.prev ? page.prev.path : false;
+            - var next = page.next ? page.next.path : false;
+            nav#post-nav
+                span.prev
+                    if page.prev
+                        a(href=url_for(prev))
+                            span.arrow ←
+                            | Newer Posts
+                span.next
+                    if page.next
+                        a(href=url_for(next))
+                            | Older Posts
+                            span.arrow →
 
-  <meta property="og:site_name" content="博雅&#39;s Blog"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="博雅&#39;s Blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">博雅&#39;s Blog</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>网鼎杯前两场部分Misc题WriteUp</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/08/30/网鼎杯前两场部分Misc汇总/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-08-30T08:49:35.069Z">
-          2018-08-30
-        </time>
-      </a>
-    </span>
-  </div>
+            include includes/comment.pug
 
 
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="相关的Misc题解总结如下"><a href="#相关的Misc题解总结如下" class="headerlink" title="相关的Misc题解总结如下;"></a>相关的Misc题解总结如下;</h1><p><strong>笔记作者：博雅</strong><br><img src="http://ae01.alicdn.com/kf/HTB17QB0BZyYBuNkSnfo763WgVXaC.png" alt="image"><br><a id="more"></a></p>
-<h2 id="0x01-Misc-套娃"><a href="#0x01-Misc-套娃" class="headerlink" title="0x01 Misc-套娃"></a>0x01 Misc-套娃</h2><p><img src="http://ae01.alicdn.com/kf/HTB1AbDTKb1YBuNjSszh763UsFXaU.png" alt="image"></p>
-<p>打开之后，直接丢入binwalk中进行查询。初步发现第六张图片存在问题。</p>
-<h3 id="关于LSB隐写"><a href="#关于LSB隐写" class="headerlink" title="关于LSB隐写"></a>关于LSB隐写</h3><p><strong>LSB全称least significant bit，最低有效位<br>PNG文件中的图像像数一般是由RGB三原色（红绿蓝）组成，每一种颜色占用8位，取值范围为0x00~0xFF，即有256种颜色，一共包含了256的3次方的颜色，即16777216 种颜色<br>人类的眼睛可以区分约1000万种不同的颜色<br>这意味着人类的眼睛无法区分余下的颜色大约有6777216种<br>LSB隐写就是修改RGB颜色分量的最低二进制位（LSB），而人类的眼睛不会注意到这前后的变化<br>每个像数可以携带3比特的信息</strong><br><img src="http://ae01.alicdn.com/kf/HTB1hSnhB8yWBuNkSmFP760guVXaP.png" alt="image"></p>
-<p><strong>使用相关的LSB脚本进行解题。</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1.RvxKh9YBuNjy0Ff760IsVXaK.png" alt="image"><br><strong>解得Flag。相关FLag保存在flag.txt文档中，直接打开查看即可。</strong></p>
-<h2 id="0x02-Misc-minified"><a href="#0x02-Misc-minified" class="headerlink" title="0x02 Misc-minified"></a>0x02 Misc-minified</h2><p><strong>使用用Stegsolve 打开图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1XDPOKkCWBuNjy0Fa760UlXXaG.png" alt="image"></p>
-<p><strong>打开 Stegsolve 选择Data Extract 查看图片通道，如图，</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1FFLTKkOWBuNjSspp760PgpXaV.png" alt="image"></p>
-<p><strong>选择0 通道发现是LSB 隐写。其实与上面套娃的判断方式相同，由此判断是LSB隐写</strong><br><img src="http://ae01.alicdn.com/kf/HTB1VGBbdjfguuRjy1ze7620KFXaZ.png" alt="image"></p>
-<p><strong>分别把 alpha green和blue的0通道另存为再进行异或处理 最终在alpha 和green 中发现flag</strong><br><img src="http://ae01.alicdn.com/kf/HTB1UXqpB5OYBuNjSsD4762SkFXaD.png" alt="image"></p>
-<h2 id="0x03-Misc-Clip"><a href="#0x03-Misc-Clip" class="headerlink" title="0x03 Misc-Clip"></a>0x03 Misc-Clip</h2><p><strong>下载题目是Disk 文件。第一反应是linux虚拟硬盘。<br>用winhex 打开如图：</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB11YBbdi6guuRjy1Xd761AwpXaY.png" alt="image"></p>
-<p><strong>在winhex中第196280 发现了png的头文件如图：</strong></p>
-<p><img src="http://ae01.alicdn.com/kf/HTB1eLXzKXmWBuNjSspd762ugXXac.png" alt="image"><br>png 16进制文件头以 89504E47开头<br><strong>第一张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1YqwzKhGYBuNjy0Fn7605lpXac.png" alt="image"><br><strong>第二张图片：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1eYVadi6guuRkSnb4762u4XXae.png" alt="image"><br><strong>使用PS拼接如下如：</strong><br><img src="http://ae01.alicdn.com/kf/HTB1rmLxKh9YBuNjy0Ff760IsVXap.png" alt="image"></p>
-<blockquote>
-<p>来自Gules-WarningCTF战队</p>
-</blockquote>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
 
 
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2018 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>

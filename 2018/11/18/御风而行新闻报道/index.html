@@ -1,141 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>陕西省信息安全技术沙龙“御风而行-协同联动” | 博雅&#39;s Blog</title>
+extends includes/layout
 
-  
-  <meta name="author" content="John Doe">
-  
+block content
 
-  
-  <meta name="description" content="">
-  
+    section#wrapper.post
+        article
+            header
+                h1!=page.title
+                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
+                    |·
+                    |#{wordcount(page.content)} words
+                    |·
+                    |#{min2read(page.content)} minutes read
+                    span.tags
 
-  
-  
-  <meta name="keywords" content="">
-  
+            if toc(page.content)
+                div#toc!=toc(page.content,{list_number:false})
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            section#post-body!=page.content
 
-  <meta property="og:title" content="陕西省信息安全技术沙龙“御风而行-协同联动”"/>
+            - var prev = page.prev ? page.prev.path : false;
+            - var next = page.next ? page.next.path : false;
+            nav#post-nav
+                span.prev
+                    if page.prev
+                        a(href=url_for(prev))
+                            span.arrow ←
+                            | Newer Posts
+                span.next
+                    if page.next
+                        a(href=url_for(next))
+                            | Older Posts
+                            span.arrow →
 
-  <meta property="og:site_name" content="博雅&#39;s Blog"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="博雅&#39;s Blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
-
-
-<body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">博雅&#39;s Blog</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-    <main class="site-main posts-loop">
-    <article>
-
-  
-    
-    <h3 class="article-title"><span>陕西省信息安全技术沙龙“御风而行-协同联动”</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/18/御风而行新闻报道/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-18T03:28:00.963Z">
-          2018-11-18
-        </time>
-      </a>
-    </span>
-  </div>
+            include includes/comment.pug
 
 
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p><img src="https://p4.ssl.qhimg.com/t01dde22d423e0ebc64.png" alt=""><br><a id="more"></a></p>
-<h2 id="活动简介"><a href="#活动简介" class="headerlink" title="活动简介"></a>活动简介</h2><p>本次“御风而行—为信息安全而战”的主办方“陕西信安联合体”，是一个由西北地区业内白帽子及西安各大高校计算机社团组织成员和安全文库（陕西分部）及各类民间计算机爱好者共同营造的西北地区首个信息安全交流社群圈子，御风而行，我们站在时代的边缘旨在给信息安全爱好者和从业者提供一个姿势分享、技术切磋和实战交流的沙龙活动。旨在培养和发现对网络安全技术有浓厚兴趣的技能型人才，宣传信息安全基础知识，让更多的在校学生，企业工作人员了解如何抵御信息泄露，如何抵御网络攻击，为更多网络安全技术爱好者提供最有力的帮助和支持。</p>
-<h2 id="活动时间"><a href="#活动时间" class="headerlink" title="活动时间"></a>活动时间</h2><p>2018年6月23日</p>
-<h2 id="活动地点"><a href="#活动地点" class="headerlink" title="活动地点"></a>活动地点</h2><p> 陕西省西京学院小礼堂</p>
-<h2 id="指导单位"><a href="#指导单位" class="headerlink" title="指导单位"></a>指导单位</h2><p>陕西省信息网络安全协会</p>
-<h2 id="主办方"><a href="#主办方" class="headerlink" title="主办方"></a>主办方</h2><p>西京学院计算机协会、陕西信安联合体</p>
-<p>##协办方<br>四叶草信息技术有限公司<br>讯蜂科技有限公司<br>胡门网络技术有限公司<br>合天智汇信息技术有限公司<br>御风维安网络科技公司</p>
-<h2 id="特邀嘉宾"><a href="#特邀嘉宾" class="headerlink" title="特邀嘉宾"></a>特邀嘉宾</h2><p>陕西省信息网络安全协会相关人员，“游侠安全网站长-网路游侠”张百川，讯蜂科技CEO李玥，西安电子科技大学教授胡建伟，四叶草安全相关负责人，国家相关部门人员，御风维安CEO王骕，电子信息现场勘验应用技术公安部重点实验室相关领导</p>
-<h2 id="相关议题"><a href="#相关议题" class="headerlink" title="相关议题"></a>相关议题</h2><h4 id="主题：Virtualbox沙盒逃逸"><a href="#主题：Virtualbox沙盒逃逸" class="headerlink" title="主题：Virtualbox沙盒逃逸"></a>主题：Virtualbox沙盒逃逸</h4><p><strong>分享人：子青  西安石油大学</strong><br>议题简介：使用虚拟机是安全人士时常为了在一台操作机上完成多种环境搭建的手段，丰富自身电脑的环境，而且处在虚拟机总是被当作临时环境使用，很多安全问题都会被自动忽略。这样的环境很危险，不过更多人心里抱有侥幸，想着用完就推掉。就在最近的VirtualBox爆出了新0Day，VirtualBox 5.2.20及以前版本的默认设置里存在危险的设置，允许具root / administrator权限的虚拟机逃逸出来，并提权为ring 0。本分享议题以该漏洞的原理分析为中心，延伸出该如何让自己的虚拟环境更加安全。</p>
-<h4 id="主题：低成本HID攻击的简单实现主题：低成本HID攻击的简单实现"><a href="#主题：低成本HID攻击的简单实现主题：低成本HID攻击的简单实现" class="headerlink" title="主题：低成本HID攻击的简单实现主题：低成本HID攻击的简单实现"></a>主题：低成本HID攻击的简单实现主题：低成本HID攻击的简单实现</h4><p><strong>分享人：王云泽 西北工业大学</strong><br>议题简介：HID攻击是近几年出现的一种较为冷门的攻击形式，通过利用广泛使用的各类HID协议所存在的漏洞，伪装或劫持HID设备进行攻击。这一攻击形式有独特的优缺点，它难以防护，难以识别，但是有距离限制，环境限制等等。本分享议题主要讨论HID攻击中的BadUSB攻击方式，以降低成本和提高普适性为中心，希望通过这一攻击技术的安全发展，找到更多现行技术的不足，推动对应防护技术的发展。</p>
-<p>####主题：从“1+1”到“2+2”<br><strong>分享人：四叶草安全攻防演练工程师、西安电子科技大学计算机技术专业学位硕士研究生兼职指导老师 coffee</strong><br>议题简介：D盾经常用于webshell的查杀，并且相当大一部分都可以被杀掉，利用图片和相关特殊手法绕过D盾等webshell查杀工具成为网络安全攻防对抗中一个不过时的话题，其中无字母数字的webshell，成为一大杀器，AWD比赛内存中的不死马也成为我们目前头疼的问题。</p>
-<p>####主题：物联网安全的攻守之道<br><strong>分享人：王骕  湖南御风维安网络科技</strong><br>议题简介：万物互联时代，物联网设备的安全问题成为了研究者密切关注的方向，如GSMA IoT、OWASP、AllJoyn等框架逐渐被安全研究者发现和重视。本次议题将从边缘计算、态势感知、机器学习等角度分享物联网安全的防护技术，从固件提取与审计、协议分析、物联网生态三端等角度分享物联网设备漏洞挖掘的经验和技巧，为大家呈现物联网安全的攻守之道。</p>
-<p>####主题：CSRF+XSS+越权组合拳<br><strong>分享人：雅轩  某乙方公司安全研究员</strong><br>议题简介：CSRF+XSS+越权组合拳，由浅入深的阐述乙方公司安全研究员在工作中遇到的奇葩漏洞以及漏洞防范技巧。并就自己本身求职的一些职业规划做出讲解。</p>
-<h4 id="主题：软件定义安全-SDN中的安全威胁"><a href="#主题：软件定义安全-SDN中的安全威胁" class="headerlink" title="主题：软件定义安全-SDN中的安全威胁"></a>主题：软件定义安全-SDN中的安全威胁</h4><p><strong>分享人：颜某 西京学院</strong><br>议题简介：随着计算机网络的高速发展，以TCP＼IP协议为核心的互联网早已渗透到我们生活中的各个方面。随着网络用户数量的急剧增加，网络规模不断扩大，网络设备上承载了过多的协议，我国面临的最迫切问题就是如何解决下一代互联网的问题，通过研究发现，SDN能实质性地提高网络性能，它在中国有着极大的市场潜力。而SDN中的安全隐患现在看来是刻不容缓。</p>
-<h4 id="主题：IoT安全"><a href="#主题：IoT安全" class="headerlink" title="主题：IoT安全"></a>主题：IoT安全</h4><p><strong>分享人：绿盟神秘嘉宾</strong></p>
-<h2 id="沙龙唯一指定直播平台"><a href="#沙龙唯一指定直播平台" class="headerlink" title="沙龙唯一指定直播平台"></a>沙龙唯一指定直播平台</h2><p>**漏洞银行直播间</p>
-<h2 id="活动周边福利"><a href="#活动周边福利" class="headerlink" title="活动周边福利"></a>活动周边福利</h2><p>本次沙龙预告期间，自2018年12月1日起连同相关实验室放出线上CTF平台，至2018年12月8日下午15：00排名前五位者，获得某线下比赛邀请赛资格。</p>
-<h2 id="活动合作厂商"><a href="#活动合作厂商" class="headerlink" title="活动合作厂商"></a>活动合作厂商</h2><p><img src="http://thyrsi.com/t6/615/1543119649x2728278644.jpg" alt=""></p>
-<p>##报名地址：<br><img src="http://thyrsi.com/t6/615/1543119713x2728278644.jpg" alt=""></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
 
 
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2018 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>

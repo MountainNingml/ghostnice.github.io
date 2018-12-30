@@ -1,90 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>about | 博雅&#39;s Blog</title>
+extends includes/layout
 
-  
-  <meta name="author" content="John Doe">
-  
+block content
 
-  
+    section#wrapper.post
+        article
+            header
+                h1!=page.title
+                h2.headline!=date(page.date, 'MMM DD, YYYY h:mm')
+                    |·
+                    |#{wordcount(page.content)} words
+                    |·
+                    |#{min2read(page.content)} minutes read
+                    span.tags
 
-  
+            if toc(page.content)
+                div#toc!=toc(page.content,{list_number:false})
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            section#post-body!=page.content
 
-  <meta property="og:title" content="about"/>
+            - var prev = page.prev ? page.prev.path : false;
+            - var next = page.next ? page.next.path : false;
+            nav#post-nav
+                span.prev
+                    if page.prev
+                        a(href=url_for(prev))
+                            span.arrow ←
+                            | Newer Posts
+                span.next
+                    if page.next
+                        a(href=url_for(next))
+                            | Older Posts
+                            span.arrow →
 
-  <meta property="og:site_name" content="博雅&#39;s Blog"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="博雅&#39;s Blog" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-</head>
+            include includes/comment.pug
 
 
-<body>
-<div class="blog">
-  <div class="content">
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">博雅&#39;s Blog</a>
-    </h1>
-    <p class="site-description"></p>
-  </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-    </ul>
-  </nav>
-</header>
 
-    <main class="site-main posts-loop">
-    <article>
-  <h2 class="article-title ">about</h2>
-
-  <div class="tags-cloud">
-    
-  </div>
-
-  <div class="archive">
-    
-
-    <nav class="pagination">
-  
-  
-</nav>
-  </div>
-</article>
-
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2018 John Doe
-    
-  </p>
-</footer>
-    
-  </div>
-</div>
-</body>
-</html>
